@@ -20,7 +20,7 @@ public class ComputerStore {
         return version;
     }
 
-    public static String getVersionOptional(Computer computer) {
+    public static String getVersionOptional() {
         return null;
     }
 }

@@ -37,23 +37,23 @@ public class ComputerStoreTest {
         String version = "pobi's usb";
         Soundcard soundcard = new Soundcard(new USB(version));
         Computer computer = new Computer(soundcard);
-        assertThat(ComputerStore.getVersionOptional(computer)).isEqualTo(version);
+        assertThat(ComputerStore.getVersionOptional()).isEqualTo(version);
     }
 
     @Test
     public void getVersionOptionalWhenComputerIsNull() throws Exception {
-        assertThat(ComputerStore.getVersionOptional(null)).isEqualTo(ComputerStore.UNKNOWN_VERSION);
+        assertThat(ComputerStore.getVersionOptional()).isEqualTo(ComputerStore.UNKNOWN_VERSION);
     }
 
     @Test
     public void getVersionOptionalWhenSoundcardIsNull() throws Exception {
         Computer computer = new Computer(null);
-        assertThat(ComputerStore.getVersionOptional(computer)).isEqualTo(ComputerStore.UNKNOWN_VERSION);
+        assertThat(ComputerStore.getVersionOptional()).isEqualTo(ComputerStore.UNKNOWN_VERSION);
     }
 
     @Test
     public void getVersionOptionalWhenUSBIsNull() throws Exception {
         Computer computer = new Computer(new Soundcard(null));
-        assertThat(ComputerStore.getVersionOptional(computer)).isEqualTo(ComputerStore.UNKNOWN_VERSION);
+        assertThat(ComputerStore.getVersionOptional()).isEqualTo(ComputerStore.UNKNOWN_VERSION);
     }
 }
