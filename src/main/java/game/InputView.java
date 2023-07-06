@@ -1,7 +1,10 @@
 package game;
 
+import game.model.Board;
+import game.model.Player;
 import game.model.Players;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class InputView {
@@ -12,7 +15,17 @@ public class InputView {
         return new Players(input);
     }
 
-    public void bettingTime(Players players) {
-
+    public Board bettingTime(Players players) {
+        List<Player> playerList = players.getPlayerList();
+        Board board = new Board();
+        Scanner scanner = new Scanner(System.in);
+        for(Player player : playerList) {
+            String name = player.getName();
+            System.out.printf("%s의 배팅 금액은?\n", name);
+            int cost = Integer.parseInt(scanner.next());
+            player.bet(cost);
+            board.saveInfo(cost, name);
+        }
+        return board;
     }
 }

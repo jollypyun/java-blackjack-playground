@@ -19,5 +19,6 @@ class InputTest {
     void setBettingTest() {
         Board board = new Board();
         Players players = new Players("pobi,jason");
+        board.betting();
     }
 }
