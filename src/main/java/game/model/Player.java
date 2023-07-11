@@ -1,7 +1,7 @@
 package game.model;
 
 public class Player {
-    private String name;
+    private final String name;
     private Integer benefit = 0;
 
     public Player(String name) {

@@ -1,7 +1,6 @@
 package game.model;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Players {
@@ -16,7 +15,7 @@ public class Players {
         return playerList.size();
     }
 
-    public List<Player> getPlayerList() {
+    public List<Player> getList() {
         return this.playerList;
     }
 }
