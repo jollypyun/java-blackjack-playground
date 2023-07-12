@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -23,6 +24,8 @@ class InputTest {
         Board board = new Board(new ArrayList<>());
         board.saveInfo(10000, "jason");
         board.saveInfo(20000, "pobi");
-        assertThat(board.getOne(0)).isEqualTo(new HashMap<String, Integer>().put("jason", 10000));
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        map.put("jason", 10000);
+        assertThat(board.getOne(0)).isEqualTo(map);
     }
 }
