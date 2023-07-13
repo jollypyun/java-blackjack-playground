@@ -18,4 +18,13 @@ public class Players {
     public List<Player> getList() {
         return this.playerList;
     }
+
+    public String namesToString() {
+        StringBuilder names = new StringBuilder();
+        names.append(playerList.get(0));
+        for(int i = 1; i < playerList.size(); i++) {
+            names.append(", ").append(playerList.get(i).getName());
+        }
+        return names.toString();
+    }
 }
