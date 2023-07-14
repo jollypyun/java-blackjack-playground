@@ -1,8 +1,6 @@
 package game.model;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Board {
     private final List<Map<String, Integer>> list;
