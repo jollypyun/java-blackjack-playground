@@ -1,10 +1,8 @@
 package game;
 
-import game.model.Board;
 import game.model.Player;
 import game.model.Players;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class InputView {
@@ -14,9 +12,21 @@ public class InputView {
         return scanner.next();
     }
 
-    public Board bettingTime(String players) {
+    public Players bettingTime(String input) {
+        String[] names = input.split(",");
+        Players players = new Players();
+        for(String name:names) {
+            Integer bet = betInput(name);
+            Player player = new Player(name);
+            player.bet(bet);
+            players.addPlayer(player);
+        }
+        return players;
+    }
+
+    private Integer betInput(String input) {
         Scanner scanner = new Scanner(System.in);
-        Board board = new Board(new ArrayList<>());
-        return null;
+        System.out.printf("%s의 배팅 금액은?", input);
+        return Integer.parseInt(scanner.next());
     }
 }

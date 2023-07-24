@@ -1,30 +1,19 @@
 package game.model;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Players {
-    private final List<Player> playerList;
-
-    public Players(String names) {
-        String[] players = names.split(",");
-        this.playerList = Arrays.stream(players).map(Player::new).collect(Collectors.toList());
+    private final List<Player> playerList = new ArrayList<>();
+    public Players() {
+        this.playerList.add(new Player("딜러"));
     }
 
-    public int size() {
+    public void addPlayer(Player player) {
+        playerList.add(player);
+    }
+
+    public Integer size() {
         return playerList.size();
-    }
-
-    public List<Player> getList() {
-        return this.playerList;
-    }
-
-    public String namesToString() {
-        StringBuilder names = new StringBuilder();
-        names.append(playerList.get(0));
-        for(int i = 1; i < playerList.size(); i++) {
-            names.append(", ").append(playerList.get(i).getName());
-        }
-        return names.toString();
     }
 }
